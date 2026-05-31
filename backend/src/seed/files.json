@@ -1,0 +1,158 @@
+[
+  {
+    "name": "courses/a1b2c3d4-1111-4a01-8b01-000000000001/1764558000000-intro-gcs.mp4",
+    "size": 320000000,
+    "contentType": "video/mp4",
+    "timeCreated": "2026-05-10T08:00:00.000Z",
+    "storageClass": "STANDARD",
+    "metadata": {
+      "courseId": "a1b2c3d4-1111-4a01-8b01-000000000001",
+      "uploaderEmail": "teacher1@educloud.vn",
+      "originalName": "intro-gcs.mp4"
+    },
+    "bucket": "educloud-videos-bucket"
+  },
+  {
+    "name": "courses/a1b2c3d4-1111-4a01-8b01-000000000002/1764561600000-iam-basics.mp4",
+    "size": 280000000,
+    "contentType": "video/mp4",
+    "timeCreated": "2026-05-10T09:00:00.000Z",
+    "storageClass": "STANDARD",
+    "metadata": {
+      "courseId": "a1b2c3d4-1111-4a01-8b01-000000000002",
+      "uploaderEmail": "teacher1@educloud.vn",
+      "originalName": "iam-basics.mp4"
+    },
+    "bucket": "educloud-videos-bucket"
+  },
+  {
+    "name": "courses/a1b2c3d4-1111-4a01-8b01-000000000004/1764565200000-bucket-lifecycle.mp4",
+    "size": 240000000,
+    "contentType": "video/mp4",
+    "timeCreated": "2026-05-10T10:00:00.000Z",
+    "storageClass": "NEARLINE",
+    "metadata": {
+      "courseId": "a1b2c3d4-1111-4a01-8b01-000000000004",
+      "uploaderEmail": "teacher2@educloud.vn",
+      "originalName": "bucket-lifecycle.mp4"
+    },
+    "bucket": "educloud-videos-bucket"
+  },
+  {
+    "name": "courses/a1b2c3d4-1111-4a01-8b01-000000000007/1764568800000-large-upload.mp4",
+    "size": 400000000,
+    "contentType": "video/mp4",
+    "timeCreated": "2026-05-10T11:00:00.000Z",
+    "storageClass": "STANDARD",
+    "metadata": {
+      "courseId": "a1b2c3d4-1111-4a01-8b01-000000000007",
+      "uploaderEmail": "teacher3@educloud.vn",
+      "originalName": "large-upload.mp4"
+    },
+    "bucket": "educloud-videos-bucket"
+  },
+  {
+    "name": "courses/a1b2c3d4-1111-4a01-8b01-000000000010/1764572400000-frontend-integration.mp4",
+    "size": 300000000,
+    "contentType": "video/mp4",
+    "timeCreated": "2026-05-10T12:00:00.000Z",
+    "storageClass": "STANDARD",
+    "metadata": {
+      "courseId": "a1b2c3d4-1111-4a01-8b01-000000000010",
+      "uploaderEmail": "teacher4@educloud.vn",
+      "originalName": "frontend-integration.mp4"
+    },
+    "bucket": "educloud-videos-bucket"
+  },
+  {
+    "name": "courses/a1b2c3d4-1111-4a01-8b01-000000000003/1764576000000-signed-url-guide.pdf",
+    "size": 4500000,
+    "contentType": "application/pdf",
+    "timeCreated": "2026-05-10T13:00:00.000Z",
+    "storageClass": "STANDARD",
+    "metadata": {
+      "courseId": "a1b2c3d4-1111-4a01-8b01-000000000003",
+      "uploaderEmail": "teacher1@educloud.vn",
+      "originalName": "signed-url-guide.pdf"
+    },
+    "bucket": "educloud-docs-bucket"
+  },
+  {
+    "name": "courses/a1b2c3d4-1111-4a01-8b01-000000000005/1764579600000-versioning-lab.pdf",
+    "size": 5200000,
+    "contentType": "application/pdf",
+    "timeCreated": "2026-05-10T14:00:00.000Z",
+    "storageClass": "NEARLINE",
+    "metadata": {
+      "courseId": "a1b2c3d4-1111-4a01-8b01-000000000005",
+      "uploaderEmail": "teacher2@educloud.vn",
+      "originalName": "versioning-lab.pdf"
+    },
+    "bucket": "educloud-docs-bucket"
+  },
+  {
+    "name": "courses/a1b2c3d4-1111-4a01-8b01-000000000008/1764583200000-pdf-organization.pdf",
+    "size": 3900000,
+    "contentType": "application/pdf",
+    "timeCreated": "2026-05-10T15:00:00.000Z",
+    "storageClass": "COLDLINE",
+    "metadata": {
+      "courseId": "a1b2c3d4-1111-4a01-8b01-000000000008",
+      "uploaderEmail": "teacher3@educloud.vn",
+      "originalName": "pdf-organization.pdf"
+    },
+    "bucket": "educloud-docs-bucket"
+  },
+  {
+    "name": "courses/a1b2c3d4-1111-4a01-8b01-000000000011/1764586800000-security-checklist.pdf",
+    "size": 6100000,
+    "contentType": "application/pdf",
+    "timeCreated": "2026-05-10T16:00:00.000Z",
+    "storageClass": "STANDARD",
+    "metadata": {
+      "courseId": "a1b2c3d4-1111-4a01-8b01-000000000011",
+      "uploaderEmail": "teacher4@educloud.vn",
+      "originalName": "security-checklist.pdf"
+    },
+    "bucket": "educloud-docs-bucket"
+  },
+  {
+    "name": "courses/a1b2c3d4-1111-4a01-8b01-000000000012/1764590400000-storage-optimization.pdf",
+    "size": 4800000,
+    "contentType": "application/pdf",
+    "timeCreated": "2026-05-10T17:00:00.000Z",
+    "storageClass": "NEARLINE",
+    "metadata": {
+      "courseId": "a1b2c3d4-1111-4a01-8b01-000000000012",
+      "uploaderEmail": "teacher4@educloud.vn",
+      "originalName": "storage-optimization.pdf"
+    },
+    "bucket": "educloud-docs-bucket"
+  },
+  {
+    "name": "logs/2026-05-11-access.log",
+    "size": 150000,
+    "contentType": "text/plain",
+    "timeCreated": "2026-05-11T08:30:00.000Z",
+    "storageClass": "STANDARD",
+    "metadata": {
+      "courseId": "",
+      "uploaderEmail": "admin1@educloud.vn",
+      "originalName": "access.log"
+    },
+    "bucket": "educloud-logs-bucket"
+  },
+  {
+    "name": "logs/2026-05-12-errors.log",
+    "size": 190000,
+    "contentType": "text/plain",
+    "timeCreated": "2026-05-12T09:45:00.000Z",
+    "storageClass": "STANDARD",
+    "metadata": {
+      "courseId": "",
+      "uploaderEmail": "admin1@educloud.vn",
+      "originalName": "errors.log"
+    },
+    "bucket": "educloud-logs-bucket"
+  }
+]

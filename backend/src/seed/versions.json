@@ -1,0 +1,290 @@
+[
+  {
+    "bucket": "educloud-videos-bucket",
+    "gcsPath": "courses/a1b2c3d4-1111-4a01-8b01-000000000001/1764558000000-intro-gcs.mp4",
+    "versions": [
+      {
+        "name": "courses/a1b2c3d4-1111-4a01-8b01-000000000001/1764558000000-intro-gcs.mp4",
+        "generation": "1764558000001",
+        "size": 300000000,
+        "timeCreated": "2026-05-09T08:00:00.000Z",
+        "updated": "2026-05-09T08:00:00.000Z",
+        "isLatest": false,
+        "uploaderEmail": "teacher1@educloud.vn"
+      },
+      {
+        "name": "courses/a1b2c3d4-1111-4a01-8b01-000000000001/1764558000000-intro-gcs.mp4",
+        "generation": "1764558000002",
+        "size": 320000000,
+        "timeCreated": "2026-05-10T08:00:00.000Z",
+        "updated": "2026-05-10T08:00:00.000Z",
+        "isLatest": true,
+        "uploaderEmail": "teacher1@educloud.vn"
+      }
+    ]
+  },
+  {
+    "bucket": "educloud-videos-bucket",
+    "gcsPath": "courses/a1b2c3d4-1111-4a01-8b01-000000000002/1764561600000-iam-basics.mp4",
+    "versions": [
+      {
+        "name": "courses/a1b2c3d4-1111-4a01-8b01-000000000002/1764561600000-iam-basics.mp4",
+        "generation": "1764561600001",
+        "size": 260000000,
+        "timeCreated": "2026-05-09T09:00:00.000Z",
+        "updated": "2026-05-09T09:00:00.000Z",
+        "isLatest": false,
+        "uploaderEmail": "teacher1@educloud.vn"
+      },
+      {
+        "name": "courses/a1b2c3d4-1111-4a01-8b01-000000000002/1764561600000-iam-basics.mp4",
+        "generation": "1764561600002",
+        "size": 280000000,
+        "timeCreated": "2026-05-10T09:00:00.000Z",
+        "updated": "2026-05-10T09:00:00.000Z",
+        "isLatest": true,
+        "uploaderEmail": "teacher1@educloud.vn"
+      }
+    ]
+  },
+  {
+    "bucket": "educloud-videos-bucket",
+    "gcsPath": "courses/a1b2c3d4-1111-4a01-8b01-000000000004/1764565200000-bucket-lifecycle.mp4",
+    "versions": [
+      {
+        "name": "courses/a1b2c3d4-1111-4a01-8b01-000000000004/1764565200000-bucket-lifecycle.mp4",
+        "generation": "1764565200001",
+        "size": 220000000,
+        "timeCreated": "2026-05-09T10:00:00.000Z",
+        "updated": "2026-05-09T10:00:00.000Z",
+        "isLatest": false,
+        "uploaderEmail": "teacher2@educloud.vn"
+      },
+      {
+        "name": "courses/a1b2c3d4-1111-4a01-8b01-000000000004/1764565200000-bucket-lifecycle.mp4",
+        "generation": "1764565200002",
+        "size": 240000000,
+        "timeCreated": "2026-05-10T10:00:00.000Z",
+        "updated": "2026-05-10T10:00:00.000Z",
+        "isLatest": true,
+        "uploaderEmail": "teacher2@educloud.vn"
+      }
+    ]
+  },
+  {
+    "bucket": "educloud-videos-bucket",
+    "gcsPath": "courses/a1b2c3d4-1111-4a01-8b01-000000000007/1764568800000-large-upload.mp4",
+    "versions": [
+      {
+        "name": "courses/a1b2c3d4-1111-4a01-8b01-000000000007/1764568800000-large-upload.mp4",
+        "generation": "1764568800001",
+        "size": 380000000,
+        "timeCreated": "2026-05-09T11:00:00.000Z",
+        "updated": "2026-05-09T11:00:00.000Z",
+        "isLatest": false,
+        "uploaderEmail": "teacher3@educloud.vn"
+      },
+      {
+        "name": "courses/a1b2c3d4-1111-4a01-8b01-000000000007/1764568800000-large-upload.mp4",
+        "generation": "1764568800002",
+        "size": 400000000,
+        "timeCreated": "2026-05-10T11:00:00.000Z",
+        "updated": "2026-05-10T11:00:00.000Z",
+        "isLatest": true,
+        "uploaderEmail": "teacher3@educloud.vn"
+      }
+    ]
+  },
+  {
+    "bucket": "educloud-videos-bucket",
+    "gcsPath": "courses/a1b2c3d4-1111-4a01-8b01-000000000010/1764572400000-frontend-integration.mp4",
+    "versions": [
+      {
+        "name": "courses/a1b2c3d4-1111-4a01-8b01-000000000010/1764572400000-frontend-integration.mp4",
+        "generation": "1764572400001",
+        "size": 280000000,
+        "timeCreated": "2026-05-09T12:00:00.000Z",
+        "updated": "2026-05-09T12:00:00.000Z",
+        "isLatest": false,
+        "uploaderEmail": "teacher4@educloud.vn"
+      },
+      {
+        "name": "courses/a1b2c3d4-1111-4a01-8b01-000000000010/1764572400000-frontend-integration.mp4",
+        "generation": "1764572400002",
+        "size": 300000000,
+        "timeCreated": "2026-05-10T12:00:00.000Z",
+        "updated": "2026-05-10T12:00:00.000Z",
+        "isLatest": true,
+        "uploaderEmail": "teacher4@educloud.vn"
+      }
+    ]
+  },
+  {
+    "bucket": "educloud-docs-bucket",
+    "gcsPath": "courses/a1b2c3d4-1111-4a01-8b01-000000000003/1764576000000-signed-url-guide.pdf",
+    "versions": [
+      {
+        "name": "courses/a1b2c3d4-1111-4a01-8b01-000000000003/1764576000000-signed-url-guide.pdf",
+        "generation": "1764576000001",
+        "size": 4200000,
+        "timeCreated": "2026-05-09T13:00:00.000Z",
+        "updated": "2026-05-09T13:00:00.000Z",
+        "isLatest": false,
+        "uploaderEmail": "teacher1@educloud.vn"
+      },
+      {
+        "name": "courses/a1b2c3d4-1111-4a01-8b01-000000000003/1764576000000-signed-url-guide.pdf",
+        "generation": "1764576000002",
+        "size": 4500000,
+        "timeCreated": "2026-05-10T13:00:00.000Z",
+        "updated": "2026-05-10T13:00:00.000Z",
+        "isLatest": true,
+        "uploaderEmail": "teacher1@educloud.vn"
+      }
+    ]
+  },
+  {
+    "bucket": "educloud-docs-bucket",
+    "gcsPath": "courses/a1b2c3d4-1111-4a01-8b01-000000000005/1764579600000-versioning-lab.pdf",
+    "versions": [
+      {
+        "name": "courses/a1b2c3d4-1111-4a01-8b01-000000000005/1764579600000-versioning-lab.pdf",
+        "generation": "1764579600001",
+        "size": 4800000,
+        "timeCreated": "2026-05-09T14:00:00.000Z",
+        "updated": "2026-05-09T14:00:00.000Z",
+        "isLatest": false,
+        "uploaderEmail": "teacher2@educloud.vn"
+      },
+      {
+        "name": "courses/a1b2c3d4-1111-4a01-8b01-000000000005/1764579600000-versioning-lab.pdf",
+        "generation": "1764579600002",
+        "size": 5200000,
+        "timeCreated": "2026-05-10T14:00:00.000Z",
+        "updated": "2026-05-10T14:00:00.000Z",
+        "isLatest": true,
+        "uploaderEmail": "teacher2@educloud.vn"
+      }
+    ]
+  },
+  {
+    "bucket": "educloud-docs-bucket",
+    "gcsPath": "courses/a1b2c3d4-1111-4a01-8b01-000000000008/1764583200000-pdf-organization.pdf",
+    "versions": [
+      {
+        "name": "courses/a1b2c3d4-1111-4a01-8b01-000000000008/1764583200000-pdf-organization.pdf",
+        "generation": "1764583200001",
+        "size": 3600000,
+        "timeCreated": "2026-05-09T15:00:00.000Z",
+        "updated": "2026-05-09T15:00:00.000Z",
+        "isLatest": false,
+        "uploaderEmail": "teacher3@educloud.vn"
+      },
+      {
+        "name": "courses/a1b2c3d4-1111-4a01-8b01-000000000008/1764583200000-pdf-organization.pdf",
+        "generation": "1764583200002",
+        "size": 3900000,
+        "timeCreated": "2026-05-10T15:00:00.000Z",
+        "updated": "2026-05-10T15:00:00.000Z",
+        "isLatest": true,
+        "uploaderEmail": "teacher3@educloud.vn"
+      }
+    ]
+  },
+  {
+    "bucket": "educloud-docs-bucket",
+    "gcsPath": "courses/a1b2c3d4-1111-4a01-8b01-000000000011/1764586800000-security-checklist.pdf",
+    "versions": [
+      {
+        "name": "courses/a1b2c3d4-1111-4a01-8b01-000000000011/1764586800000-security-checklist.pdf",
+        "generation": "1764586800001",
+        "size": 5700000,
+        "timeCreated": "2026-05-09T16:00:00.000Z",
+        "updated": "2026-05-09T16:00:00.000Z",
+        "isLatest": false,
+        "uploaderEmail": "teacher4@educloud.vn"
+      },
+      {
+        "name": "courses/a1b2c3d4-1111-4a01-8b01-000000000011/1764586800000-security-checklist.pdf",
+        "generation": "1764586800002",
+        "size": 6100000,
+        "timeCreated": "2026-05-10T16:00:00.000Z",
+        "updated": "2026-05-10T16:00:00.000Z",
+        "isLatest": true,
+        "uploaderEmail": "teacher4@educloud.vn"
+      }
+    ]
+  },
+  {
+    "bucket": "educloud-docs-bucket",
+    "gcsPath": "courses/a1b2c3d4-1111-4a01-8b01-000000000012/1764590400000-storage-optimization.pdf",
+    "versions": [
+      {
+        "name": "courses/a1b2c3d4-1111-4a01-8b01-000000000012/1764590400000-storage-optimization.pdf",
+        "generation": "1764590400001",
+        "size": 4500000,
+        "timeCreated": "2026-05-09T17:00:00.000Z",
+        "updated": "2026-05-09T17:00:00.000Z",
+        "isLatest": false,
+        "uploaderEmail": "teacher4@educloud.vn"
+      },
+      {
+        "name": "courses/a1b2c3d4-1111-4a01-8b01-000000000012/1764590400000-storage-optimization.pdf",
+        "generation": "1764590400002",
+        "size": 4800000,
+        "timeCreated": "2026-05-10T17:00:00.000Z",
+        "updated": "2026-05-10T17:00:00.000Z",
+        "isLatest": true,
+        "uploaderEmail": "teacher4@educloud.vn"
+      }
+    ]
+  },
+  {
+    "bucket": "educloud-logs-bucket",
+    "gcsPath": "logs/2026-05-11-access.log",
+    "versions": [
+      {
+        "name": "logs/2026-05-11-access.log",
+        "generation": "1764594000001",
+        "size": 140000,
+        "timeCreated": "2026-05-10T08:30:00.000Z",
+        "updated": "2026-05-10T08:30:00.000Z",
+        "isLatest": false,
+        "uploaderEmail": "admin1@educloud.vn"
+      },
+      {
+        "name": "logs/2026-05-11-access.log",
+        "generation": "1764594000002",
+        "size": 150000,
+        "timeCreated": "2026-05-11T08:30:00.000Z",
+        "updated": "2026-05-11T08:30:00.000Z",
+        "isLatest": true,
+        "uploaderEmail": "admin1@educloud.vn"
+      }
+    ]
+  },
+  {
+    "bucket": "educloud-logs-bucket",
+    "gcsPath": "logs/2026-05-12-errors.log",
+    "versions": [
+      {
+        "name": "logs/2026-05-12-errors.log",
+        "generation": "1764680400001",
+        "size": 180000,
+        "timeCreated": "2026-05-11T09:45:00.000Z",
+        "updated": "2026-05-11T09:45:00.000Z",
+        "isLatest": false,
+        "uploaderEmail": "admin1@educloud.vn"
+      },
+      {
+        "name": "logs/2026-05-12-errors.log",
+        "generation": "1764680400002",
+        "size": 190000,
+        "timeCreated": "2026-05-12T09:45:00.000Z",
+        "updated": "2026-05-12T09:45:00.000Z",
+        "isLatest": true,
+        "uploaderEmail": "admin1@educloud.vn"
+      }
+    ]
+  }
+]

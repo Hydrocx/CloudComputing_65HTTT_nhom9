@@ -1,0 +1,110 @@
+[
+  {
+    "id": "a1b2c3d4-1111-4a01-8b01-000000000001",
+    "title": "GCS Co Ban",
+    "description": "Gioi thieu bucket, object va luong thao tac co ban.",
+    "teacherEmail": "teacher1@educloud.vn",
+    "studentEmails": ["student1@educloud.vn", "student2@educloud.vn"],
+    "createdAt": "2026-05-01T08:00:00.000Z"
+  },
+  {
+    "id": "a1b2c3d4-1111-4a01-8b01-000000000002",
+    "title": "IAM & Quyen Truy Cap",
+    "description": "Thiet lap IAM, role va chinh sach bucket.",
+    "teacherEmail": "teacher1@educloud.vn",
+    "studentEmails": ["student2@educloud.vn", "student3@educloud.vn"],
+    "createdAt": "2026-05-02T08:00:00.000Z"
+  },
+  {
+    "id": "a1b2c3d4-1111-4a01-8b01-000000000003",
+    "title": "Signed URL Co Ban",
+    "description": "Tao signed URL va kiem soat thoi gian het han.",
+    "teacherEmail": "teacher1@educloud.vn",
+    "studentEmails": ["student3@educloud.vn", "student4@educloud.vn"],
+    "createdAt": "2026-05-03T08:00:00.000Z"
+  },
+  {
+    "id": "a1b2c3d4-1111-4a01-8b01-000000000004",
+    "title": "Quan ly Bucket va Vong Doi",
+    "description": "Lifecycle rule, chuyen lop luu tru.",
+    "teacherEmail": "teacher2@educloud.vn",
+    "studentEmails": ["student4@educloud.vn", "student5@educloud.vn"],
+    "createdAt": "2026-05-04T08:00:00.000Z"
+  },
+  {
+    "id": "a1b2c3d4-1111-4a01-8b01-000000000005",
+    "title": "GCS Versioning Thuc Hanh",
+    "description": "Bat versioning, phuc hoi phien ban.",
+    "teacherEmail": "teacher2@educloud.vn",
+    "studentEmails": ["student5@educloud.vn", "student6@educloud.vn"],
+    "createdAt": "2026-05-05T08:00:00.000Z"
+  },
+  {
+    "id": "a1b2c3d4-1111-4a01-8b01-000000000006",
+    "title": "GCS Chi Phi va Tinh Toan",
+    "description": "Uoc tinh chi phi luu tru va tai xuong.",
+    "teacherEmail": "teacher2@educloud.vn",
+    "studentEmails": ["student1@educloud.vn", "student6@educloud.vn"],
+    "createdAt": "2026-05-06T08:00:00.000Z"
+  },
+  {
+    "id": "a1b2c3d4-1111-4a01-8b01-000000000007",
+    "title": "Upload Video Lon",
+    "description": "Toi uu upload file video dung luong lon.",
+    "teacherEmail": "teacher3@educloud.vn",
+    "studentEmails": [
+      "student1@educloud.vn",
+      "student3@educloud.vn",
+      "student5@educloud.vn"
+    ],
+    "createdAt": "2026-05-07T08:00:00.000Z"
+  },
+  {
+    "id": "a1b2c3d4-1111-4a01-8b01-000000000008",
+    "title": "Quan ly Tai Lieu PDF",
+    "description": "Luu tru tai lieu, to chuc theo mon hoc.",
+    "teacherEmail": "teacher3@educloud.vn",
+    "studentEmails": [
+      "student2@educloud.vn",
+      "student4@educloud.vn",
+      "student6@educloud.vn"
+    ],
+    "createdAt": "2026-05-08T08:00:00.000Z"
+  },
+  {
+    "id": "a1b2c3d4-1111-4a01-8b01-000000000009",
+    "title": "GCS Logs & Audit",
+    "description": "Thu thap log, theo doi truy cap.",
+    "teacherEmail": "teacher3@educloud.vn",
+    "studentEmails": ["student1@educloud.vn", "student4@educloud.vn"],
+    "createdAt": "2026-05-09T08:00:00.000Z"
+  },
+  {
+    "id": "a1b2c3d4-1111-4a01-8b01-000000000010",
+    "title": "Tich hop Frontend",
+    "description": "Ket noi frontend voi API va Signed URL.",
+    "teacherEmail": "teacher4@educloud.vn",
+    "studentEmails": ["student2@educloud.vn", "student5@educloud.vn"],
+    "createdAt": "2026-05-10T08:00:00.000Z"
+  },
+  {
+    "id": "a1b2c3d4-1111-4a01-8b01-000000000011",
+    "title": "Kiem tra Bao mat",
+    "description": "Chinh sach quyen va kiem tra truy cap.",
+    "teacherEmail": "teacher4@educloud.vn",
+    "studentEmails": ["student3@educloud.vn", "student6@educloud.vn"],
+    "createdAt": "2026-05-11T08:00:00.000Z"
+  },
+  {
+    "id": "a1b2c3d4-1111-4a01-8b01-000000000012",
+    "title": "Toi uu Luu tru",
+    "description": "Toi uu storage class va chi phi.",
+    "teacherEmail": "teacher4@educloud.vn",
+    "studentEmails": [
+      "student1@educloud.vn",
+      "student2@educloud.vn",
+      "student3@educloud.vn"
+    ],
+    "createdAt": "2026-05-12T08:00:00.000Z"
+  }
+]

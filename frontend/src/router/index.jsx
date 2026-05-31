@@ -1,4 +1,4 @@
-import { createBrowserRouter, Navigate } from "react-router-dom";
+import { createHashRouter, Navigate } from "react-router-dom";
 import App from "../App.jsx";
 import Login from "../pages/Login.jsx";
 import Dashboard from "../pages/Dashboard.jsx";
@@ -23,7 +23,7 @@ const ProtectedRoute = ({ allow, children }) => {
   return children;
 };
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     path: "/login",
     element: <Login />,

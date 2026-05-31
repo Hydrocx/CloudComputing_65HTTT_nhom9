@@ -8,11 +8,19 @@ import usersRouter from "./routes/users.js";
 
 const app = express();
 const PORT = process.env.PORT || 3001;
-const CORS_ORIGIN = process.env.CORS_ORIGIN || "http://localhost:5173";
+const rawOrigins = process.env.CORS_ORIGIN || "*";
+const allowedOrigins = rawOrigins
+  .split(",")
+  .map((origin) => origin.trim())
+  .filter(Boolean);
 
 app.use(
   cors({
-    origin: CORS_ORIGIN,
+    origin: (origin, callback) => {
+      if (!origin) return callback(null, true);
+      if (allowedOrigins.includes(origin)) return callback(null, true);
+      return callback(new Error("Not allowed by CORS"));
+    },
     credentials: true,
   })
 );
@@ -32,6 +40,6 @@ app.use((req, res) => {
   res.status(404).json({ success: false, error: "Khong tim thay duong dan." });
 });
 
-app.listen(PORT, () => {
+app.listen(PORT, "0.0.0.0", () => {
   console.log(`EduCloud backend running on port ${PORT}`);
 });

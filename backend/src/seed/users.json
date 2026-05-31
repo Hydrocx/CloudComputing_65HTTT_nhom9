@@ -1,0 +1,147 @@
+[
+  {
+    "id": "b1c2d3e4-2222-4b01-9c01-000000000001",
+    "name": "Admin One",
+    "email": "admin1@educloud.vn",
+    "role": "Admin",
+    "courseIds": [],
+    "enrolledCourseIds": []
+  },
+  {
+    "id": "b1c2d3e4-2222-4b01-9c01-000000000002",
+    "name": "Admin Two",
+    "email": "admin2@educloud.vn",
+    "role": "Admin",
+    "courseIds": [],
+    "enrolledCourseIds": []
+  },
+  {
+    "id": "c1d2e3f4-3333-4c01-ad01-000000000001",
+    "name": "Teacher Hoa",
+    "email": "teacher1@educloud.vn",
+    "role": "Teacher",
+    "courseIds": [
+      "a1b2c3d4-1111-4a01-8b01-000000000001",
+      "a1b2c3d4-1111-4a01-8b01-000000000002",
+      "a1b2c3d4-1111-4a01-8b01-000000000003"
+    ],
+    "enrolledCourseIds": []
+  },
+  {
+    "id": "c1d2e3f4-3333-4c01-ad01-000000000002",
+    "name": "Teacher Nam",
+    "email": "teacher2@educloud.vn",
+    "role": "Teacher",
+    "courseIds": [
+      "a1b2c3d4-1111-4a01-8b01-000000000004",
+      "a1b2c3d4-1111-4a01-8b01-000000000005",
+      "a1b2c3d4-1111-4a01-8b01-000000000006"
+    ],
+    "enrolledCourseIds": []
+  },
+  {
+    "id": "c1d2e3f4-3333-4c01-ad01-000000000003",
+    "name": "Teacher Linh",
+    "email": "teacher3@educloud.vn",
+    "role": "Teacher",
+    "courseIds": [
+      "a1b2c3d4-1111-4a01-8b01-000000000007",
+      "a1b2c3d4-1111-4a01-8b01-000000000008",
+      "a1b2c3d4-1111-4a01-8b01-000000000009"
+    ],
+    "enrolledCourseIds": []
+  },
+  {
+    "id": "c1d2e3f4-3333-4c01-ad01-000000000004",
+    "name": "Teacher Quan",
+    "email": "teacher4@educloud.vn",
+    "role": "Teacher",
+    "courseIds": [
+      "a1b2c3d4-1111-4a01-8b01-000000000010",
+      "a1b2c3d4-1111-4a01-8b01-000000000011",
+      "a1b2c3d4-1111-4a01-8b01-000000000012"
+    ],
+    "enrolledCourseIds": []
+  },
+  {
+    "id": "d1e2f3a4-4444-4d01-be01-000000000001",
+    "name": "Student An",
+    "email": "student1@educloud.vn",
+    "role": "Student",
+    "courseIds": [],
+    "enrolledCourseIds": [
+      "a1b2c3d4-1111-4a01-8b01-000000000001",
+      "a1b2c3d4-1111-4a01-8b01-000000000006",
+      "a1b2c3d4-1111-4a01-8b01-000000000007",
+      "a1b2c3d4-1111-4a01-8b01-000000000009",
+      "a1b2c3d4-1111-4a01-8b01-000000000012"
+    ]
+  },
+  {
+    "id": "d1e2f3a4-4444-4d01-be01-000000000002",
+    "name": "Student Binh",
+    "email": "student2@educloud.vn",
+    "role": "Student",
+    "courseIds": [],
+    "enrolledCourseIds": [
+      "a1b2c3d4-1111-4a01-8b01-000000000001",
+      "a1b2c3d4-1111-4a01-8b01-000000000002",
+      "a1b2c3d4-1111-4a01-8b01-000000000008",
+      "a1b2c3d4-1111-4a01-8b01-000000000010",
+      "a1b2c3d4-1111-4a01-8b01-000000000012"
+    ]
+  },
+  {
+    "id": "d1e2f3a4-4444-4d01-be01-000000000003",
+    "name": "Student Chau",
+    "email": "student3@educloud.vn",
+    "role": "Student",
+    "courseIds": [],
+    "enrolledCourseIds": [
+      "a1b2c3d4-1111-4a01-8b01-000000000002",
+      "a1b2c3d4-1111-4a01-8b01-000000000003",
+      "a1b2c3d4-1111-4a01-8b01-000000000007",
+      "a1b2c3d4-1111-4a01-8b01-000000000011",
+      "a1b2c3d4-1111-4a01-8b01-000000000012"
+    ]
+  },
+  {
+    "id": "d1e2f3a4-4444-4d01-be01-000000000004",
+    "name": "Student Duy",
+    "email": "student4@educloud.vn",
+    "role": "Student",
+    "courseIds": [],
+    "enrolledCourseIds": [
+      "a1b2c3d4-1111-4a01-8b01-000000000003",
+      "a1b2c3d4-1111-4a01-8b01-000000000004",
+      "a1b2c3d4-1111-4a01-8b01-000000000008",
+      "a1b2c3d4-1111-4a01-8b01-000000000009"
+    ]
+  },
+  {
+    "id": "d1e2f3a4-4444-4d01-be01-000000000005",
+    "name": "Student Giang",
+    "email": "student5@educloud.vn",
+    "role": "Student",
+    "courseIds": [],
+    "enrolledCourseIds": [
+      "a1b2c3d4-1111-4a01-8b01-000000000004",
+      "a1b2c3d4-1111-4a01-8b01-000000000005",
+      "a1b2c3d4-1111-4a01-8b01-000000000007",
+      "a1b2c3d4-1111-4a01-8b01-000000000010"
+    ]
+  },
+  {
+    "id": "d1e2f3a4-4444-4d01-be01-000000000006",
+    "name": "Student Hanh",
+    "email": "student6@educloud.vn",
+    "role": "Student",
+    "courseIds": [],
+    "enrolledCourseIds": [
+      "a1b2c3d4-1111-4a01-8b01-000000000005",
+      "a1b2c3d4-1111-4a01-8b01-000000000006",
+      "a1b2c3d4-1111-4a01-8b01-000000000008",
+      "a1b2c3d4-1111-4a01-8b01-000000000011"
+    ]
+  }
+]
