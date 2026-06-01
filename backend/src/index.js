@@ -6,6 +6,8 @@ import signedUrlRouter from "./routes/signedUrl.js";
 import coursesRouter from "./routes/courses.js";
 import usersRouter from "./routes/users.js";
 import emailRouter from "./routes/email.js";
+import leadsRouter from "./routes/leads.js";
+import crmWebhookRouter from "./webhooks/crm-webhook.js";
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -39,6 +41,10 @@ app.use("/api/users", usersRouter);
 
 // ── Email System ─────────────────────────────────────────────────────
 app.use("/api/email", emailRouter);
+
+// ── Zoho CRM Lead System ────────────────────────────────────────────
+app.use("/api/leads", leadsRouter);
+app.use("/api/webhooks", crmWebhookRouter);
 
 app.use((req, res) => {
   res.status(404).json({ success: false, error: "Khong tim thay duong dan." });

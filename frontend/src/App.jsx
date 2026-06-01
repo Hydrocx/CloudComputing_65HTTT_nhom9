@@ -10,6 +10,7 @@ const PAGE_TITLES = {
   "/signed-url": "Trình diễn Signed URL",
   "/iam": "Quản trị IAM",
   "/versioning": "Lịch sử phiên bản",
+  "/leads": "🎯 Zoho CRM — Lead Pipeline",
   "/email": "📧 Hệ thống Email",
 };
 
