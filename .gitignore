@@ -7,4 +7,5 @@ backend/service-account.json
 .env
 backend/.env
 frontend/.env
+backend/data/
 .DS_Store

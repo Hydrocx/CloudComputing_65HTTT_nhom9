@@ -5,6 +5,7 @@ import filesRouter from "./routes/files.js";
 import signedUrlRouter from "./routes/signedUrl.js";
 import coursesRouter from "./routes/courses.js";
 import usersRouter from "./routes/users.js";
+import emailRouter from "./routes/email.js";
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -35,6 +36,9 @@ app.use("/api/files", filesRouter);
 app.use("/api/signed-url", signedUrlRouter);
 app.use("/api/courses", coursesRouter);
 app.use("/api/users", usersRouter);
+
+// ── Email System ─────────────────────────────────────────────────────
+app.use("/api/email", emailRouter);
 
 app.use((req, res) => {
   res.status(404).json({ success: false, error: "Khong tim thay duong dan." });

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Course Enrollment Confirmation</title>
+</head>
+<body style="margin:0;padding:0;background-color:#f4f6f9;font-family:Arial,Helvetica,sans-serif;">
+  <table width="100%" cellpadding="0" cellspacing="0" style="background-color:#f4f6f9;padding:40px 16px;">
+    <tr>
+      <td align="center">
+        <table width="560" cellpadding="0" cellspacing="0" style="background-color:#ffffff;border-radius:12px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,0.08);">
+          <!-- Header -->
+          <tr>
+            <td style="background:linear-gradient(135deg,#059669,#047857);padding:32px 40px;text-align:center;">
+              <h1 style="color:#ffffff;margin:0;font-size:24px;font-weight:700;">EduCloud</h1>
+              <p style="color:#a7f3d0;margin:8px 0 0;font-size:14px;">Enrollment Confirmed</p>
+            </td>
+          </tr>
+          <!-- Body -->
+          <tr>
+            <td style="padding:40px;">
+              <h2 style="color:#1e293b;margin:0 0 8px;font-size:20px;">You're Enrolled! 🎉</h2>
+              <p style="color:#475569;font-size:15px;line-height:1.6;margin:0 0 16px;">
+                Hi <strong>{{name}}</strong>,
+              </p>
+              <p style="color:#475569;font-size:15px;line-height:1.6;margin:0 0 20px;">
+                You have successfully enrolled in the course:
+              </p>
+              <!-- Course Card -->
+              <table width="100%" cellpadding="0" cellspacing="0" style="background-color:#f0fdf4;border:1px solid #bbf7d0;border-radius:8px;margin-bottom:24px;">
+                <tr>
+                  <td style="padding:20px;">
+                    <h3 style="color:#065f46;margin:0 0 4px;font-size:18px;">{{courseName}}</h3>
+                    <p style="color:#047857;margin:0;font-size:14px;">{{courseDescription}}</p>
+                  </td>
+                </tr>
+              </table>
+              <p style="color:#475569;font-size:15px;line-height:1.6;margin:0 0 24px;">
+                You can now access all course materials, videos, and assignments from your dashboard.
+              </p>
+              <!-- CTA Button -->
+              <table cellpadding="0" cellspacing="0" style="margin:24px 0;">
+                <tr>
+                  <td align="center" style="background-color:#059669;border-radius:8px;">
+                    <a href="{{dashboardUrl}}" target="_blank"
+                       style="display:inline-block;padding:14px 36px;color:#ffffff;font-size:16px;font-weight:600;text-decoration:none;">
+                      Go to My Courses
+                    </a>
+                  </td>
+                </tr>
+              </table>
+              <hr style="border:none;border-top:1px solid #e2e8f0;margin:28px 0;" />
+              <p style="color:#94a3b8;font-size:13px;line-height:1.5;margin:0;">
+                If you believe this enrollment was made in error, please contact our support team.
+              </p>
+            </td>
+          </tr>
+          <!-- Footer -->
+          <tr>
+            <td style="background-color:#f8fafc;padding:20px 40px;text-align:center;border-top:1px solid #e2e8f0;">
+              <p style="color:#94a3b8;font-size:12px;margin:0;">
+                &copy; {{year}} EduCloud. All rights reserved.
+              </p>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>

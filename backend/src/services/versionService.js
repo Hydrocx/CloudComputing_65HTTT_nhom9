@@ -1,6 +1,11 @@
 import { storage } from "../config/gcs.js";
 
+const guardStorage = () => {
+  if (!storage) throw new Error("GCS not configured. Set GOOGLE_APPLICATION_CREDENTIALS.");
+};
+
 export const listVersions = async (bucketName, fileName) => {
+  guardStorage();
   try {
     // Lay tat ca phien ban (versions) cua object
     const [files] = await storage
@@ -27,6 +32,7 @@ export const listVersions = async (bucketName, fileName) => {
 };
 
 export const restoreVersion = async (bucketName, fileName, generation) => {
+  guardStorage();
   try {
     // Copy phien ban cu de tao phien ban moi nhat
     const source = storage.bucket(bucketName).file(fileName, { generation });

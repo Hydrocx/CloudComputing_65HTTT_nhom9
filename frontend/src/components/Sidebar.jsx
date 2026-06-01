@@ -9,6 +9,7 @@ const NAV_ITEMS = [
   { path: "/signed-url", label: "Signed URL" },
   { path: "/versioning", label: "Phiên bản", roles: ["Admin", "Teacher"] },
   { path: "/iam", label: "IAM", roles: ["Admin"] },
+  { path: "/email", label: "📧 Email", roles: ["Admin"] },
 ];
 
 const Sidebar = ({ isOpen, onClose }) => {

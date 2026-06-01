@@ -43,6 +43,7 @@ router.post(
       const { bucket, gcsPath, expiresIn } = req.body;
       const role = req.user.role;
 
+      if (!storage) return sendError(res, "GCS chua duoc cau hinh.", 501);
       // Doc metadata de xac thuc mon hoc phu hop voi role
       const [metadata] = await storage.bucket(bucket).file(gcsPath).getMetadata();
       const courseId = metadata.metadata?.courseId || "";

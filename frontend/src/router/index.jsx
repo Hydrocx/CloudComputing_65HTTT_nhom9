@@ -7,6 +7,7 @@ import FileManager from "../pages/FileManager.jsx";
 import SignedURL from "../pages/SignedURL.jsx";
 import IAM from "../pages/IAM.jsx";
 import Versioning from "../pages/Versioning.jsx";
+import EmailTest from "../pages/EmailTest.jsx";
 import { useAuth } from "../context/AuthContext.jsx";
 
 const ProtectedRoute = ({ allow, children }) => {
@@ -53,6 +54,14 @@ const router = createHashRouter([
         element: (
           <ProtectedRoute allow={["Admin", "Teacher"]}>
             <Versioning />
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: "email",
+        element: (
+          <ProtectedRoute allow={["Admin"]}>
+            <EmailTest />
           </ProtectedRoute>
         ),
       },

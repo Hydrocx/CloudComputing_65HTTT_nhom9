@@ -5,19 +5,23 @@
   "type": "module",
   "scripts": {
     "dev": "nodemon src/index.js",
-    "start": "node src/index.js"
+    "start": "node src/index.js",
+    "test": "node --experimental-vm-modules ./node_modules/jest/bin/jest.js --forceExit --detectOpenHandles"
   },
   "dependencies": {
     "@google-cloud/storage": "^7.16.0",
+    "better-sqlite3": "^12.10.0",
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
     "express-rate-limit": "^7.4.0",
     "express-validator": "^7.2.0",
     "jsonwebtoken": "^9.0.2",
-    "multer": "^1.4.5-lts.1"
+    "multer": "^1.4.5-lts.1",
+    "nodemailer": "^8.0.10"
   },
   "devDependencies": {
+    "jest": "^30.4.2",
     "nodemon": "^3.1.4"
   }
 }

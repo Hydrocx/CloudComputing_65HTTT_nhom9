@@ -1,0 +1,4 @@
+VITE_API_BASE_URL=https://educloud-backend-871209214220.asia-southeast1.run.app/api
+VITE_BUCKET_VIDEOS=educloud-videos-nhom9ca3
+VITE_BUCKET_DOCS=educloud-docs-nhom9ca3
+VITE_BUCKET_LOGS=educloud-logs-nhom9ca3
