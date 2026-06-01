@@ -3,15 +3,25 @@ import { body, param, validationResult } from "express-validator";
 import { auth } from "../middleware/auth.js";
 import { requireRole } from "../middleware/roleCheck.js";
 import {
+  addComment,
   addCourse,
   addUser,
   deleteCourse,
+  getCommentById,
+  getCommentsByCourse,
   getCourseById,
   getCourses,
+  getOrCreateUserByEmail,
+  getReviewStatsByCourse,
+  getReviewsByCourse,
   getUserByEmail,
+  getUserById,
   updateCourse,
   updateUser,
+  upsertReview,
 } from "../data/store.js";
+import { validateCommentPayload } from "../validation/commentValidation.js";
+import { validateReviewPayload } from "../validation/reviewValidation.js";
 
 const router = express.Router();
 
@@ -25,6 +35,26 @@ const validate = (req, res, next) => {
     return sendError(res, errors.array()[0].msg);
   }
   return next();
+};
+
+const resolveAuthor = (user) => {
+  if (!user?.email) return null;
+
+  return getOrCreateUserByEmail({
+    email: user.email,
+    name: user.name,
+    role: user.role,
+  });
+};
+
+const toAuthorPayload = (user) => {
+  if (!user) return null;
+  return {
+    id: user.id,
+    name: user.name,
+    email: user.email,
+    role: user.role,
+  };
 };
 
 router.get("/", auth, (req, res) => {
@@ -142,26 +172,124 @@ router.post(
   param("id").isString().withMessage("ID mon hoc khong hop le."),
   validate,
   (req, res) => {
+    const course = getCourseById(req.params.id);
+    if (!course) {
+      return sendError(res, "Khong tim thay mon hoc.", 404);
+    }
+
+    const email = req.user.email;
+    if (!course.studentEmails.includes(email)) {
+      course.studentEmails.push(email);
+      updateCourse(course.id, { studentEmails: course.studentEmails });
+    }
+
+    const user = getUserByEmail(email);
+    if (user && !user.enrolledCourseIds.includes(course.id)) {
+      updateUser(user.id, {
+        enrolledCourseIds: [...user.enrolledCourseIds, course.id],
+      });
+    }
+
+    return sendSuccess(res, course);
+  }
+);
+
+router.get("/:id/comments", auth, (req, res) => {
   const course = getCourseById(req.params.id);
   if (!course) {
     return sendError(res, "Khong tim thay mon hoc.", 404);
   }
 
-  const email = req.user.email;
-  if (!course.studentEmails.includes(email)) {
-    course.studentEmails.push(email);
-    updateCourse(course.id, { studentEmails: course.studentEmails });
+  const comments = getCommentsByCourse(course.id).map((comment) => ({
+    ...comment,
+    author: toAuthorPayload(getUserById(comment.authorId)),
+  }));
+
+  return sendSuccess(res, comments);
+});
+
+router.post("/:id/comments", auth, (req, res) => {
+  const course = getCourseById(req.params.id);
+  if (!course) {
+    return sendError(res, "Khong tim thay mon hoc.", 404);
   }
 
-  const user = getUserByEmail(email);
-  if (user && !user.enrolledCourseIds.includes(course.id)) {
-    updateUser(user.id, {
-      enrolledCourseIds: [...user.enrolledCourseIds, course.id],
+  const author = resolveAuthor(req.user);
+  if (!author) {
+    return sendError(res, "Khong tim thay nguoi dung.", 401);
+  }
+
+  let payload;
+  try {
+    payload = validateCommentPayload({
+      courseId: course.id,
+      authorId: author.id,
+      parentCommentId: req.body.parentCommentId ?? null,
+      content: req.body.content ?? "",
     });
+  } catch (error) {
+    return sendError(res, error?.errors?.[0]?.message || "Noi dung khong hop le.");
   }
 
-  return sendSuccess(res, course);
+  if (payload.parentCommentId) {
+    const parent = getCommentById(payload.parentCommentId);
+    if (!parent || parent.courseId !== course.id) {
+      return sendError(res, "Khong tim thay binh luan cha.", 404);
+    }
   }
-);
+
+  const comment = addComment(payload);
+  return sendSuccess(res, { ...comment, author: toAuthorPayload(author) });
+});
+
+router.get("/:id/reviews", auth, (req, res) => {
+  const course = getCourseById(req.params.id);
+  if (!course) {
+    return sendError(res, "Khong tim thay mon hoc.", 404);
+  }
+
+  const reviews = getReviewsByCourse(course.id).map((review) => ({
+    ...review,
+    author: toAuthorPayload(getUserById(review.authorId)),
+  }));
+
+  return sendSuccess(res, reviews);
+});
+
+router.get("/:id/reviews/stats", auth, (req, res) => {
+  const course = getCourseById(req.params.id);
+  if (!course) {
+    return sendError(res, "Khong tim thay mon hoc.", 404);
+  }
+
+  return sendSuccess(res, getReviewStatsByCourse(course.id));
+});
+
+router.post("/:id/reviews", auth, (req, res) => {
+  const course = getCourseById(req.params.id);
+  if (!course) {
+    return sendError(res, "Khong tim thay mon hoc.", 404);
+  }
+
+  const author = resolveAuthor(req.user);
+  if (!author) {
+    return sendError(res, "Khong tim thay nguoi dung.", 401);
+  }
+
+  let payload;
+  try {
+    payload = validateReviewPayload({
+      courseId: course.id,
+      authorId: author.id,
+      rating: req.body.rating,
+      content: req.body.content,
+    });
+  } catch (error) {
+    return sendError(res, error?.errors?.[0]?.message || "Danh gia khong hop le.");
+  }
+
+  const review = upsertReview(payload);
+  return sendSuccess(res, { ...review, author: toAuthorPayload(author) });
+});
 
 export default router;
