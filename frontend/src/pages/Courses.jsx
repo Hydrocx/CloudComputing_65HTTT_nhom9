@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useAuth } from "../context/AuthContext.jsx";
 import useCourses from "../hooks/useCourses.js";
+import CourseEngagement from "../components/CourseEngagement.jsx";
 
 const Courses = () => {
   const { role, currentUser } = useAuth();
@@ -107,6 +108,7 @@ const Courses = () => {
                   </>
                 )}
               </div>
+              <CourseEngagement courseId={course.id} />
             </div>
           ))}
         </div>
