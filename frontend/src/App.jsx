@@ -2,6 +2,7 @@ import { useMemo, useState } from "react";
 import { Outlet, useLocation } from "react-router-dom";
 import { Toaster } from "react-hot-toast";
 import Sidebar from "./components/Sidebar.jsx";
+import ZohoDeskWidget from "./components/ZohoDeskWidget.jsx";
 
 const PAGE_TITLES = {
   "/": "Tổng quan hệ thống",
@@ -10,6 +11,18 @@ const PAGE_TITLES = {
   "/signed-url": "Trình diễn Signed URL",
   "/iam": "Quản trị IAM",
   "/versioning": "Lịch sử phiên bản",
+  // Zoho pages
+  "/zoho": "Zoho Integration Hub",
+  "/zoho/crm": "Đăng ký tư vấn — Zoho CRM",
+  "/zoho/crm/leads": "Danh sách Lead — Zoho CRM",
+  "/zoho/desk": "Hỗ trợ kỹ thuật — Zoho Desk",
+  "/zoho/invoice": "Hóa đơn học phí — Zoho Invoice",
+  "/zoho/sign": "Ký số tài liệu — Zoho Sign",
+  "/zoho/meeting": "Lớp học trực tuyến — Zoho Meeting",
+  "/zoho/analytics": "Báo cáo & Thống kê — Zoho Analytics",
+  "/zoho/subscription": "Gói đăng ký — Zoho Subscriptions",
+  "/zoho/cliq": "Thông báo nội bộ — Zoho Cliq",
+  "/zoho/creator": "Ứng dụng nội bộ — Zoho Creator",
 };
 
 const App = () => {
@@ -45,6 +58,9 @@ const App = () => {
           <Outlet />
         </main>
       </div>
+
+      {/* Zoho Desk floating support widget */}
+      <ZohoDeskWidget />
 
       <Toaster
         position="top-right"
