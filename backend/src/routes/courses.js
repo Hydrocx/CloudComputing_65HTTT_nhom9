@@ -1,5 +1,6 @@
 import express from "express";
 import { body, param, validationResult } from "express-validator";
+import { sendEnrollmentConfirmation } from "../services/zohoMailService.js";
 import { auth } from "../middleware/auth.js";
 import { requireRole } from "../middleware/roleCheck.js";
 import {
@@ -189,6 +190,11 @@ router.post(
         enrolledCourseIds: [...user.enrolledCourseIds, course.id],
       });
     }
+
+    // Send enrollment confirmation email (non-blocking)
+    sendEnrollmentConfirmation({ name: user?.name || email, email }, course).catch((err) =>
+      console.warn("[Zoho Mail] Enrollment email failed:", err.message)
+    );
 
     return sendSuccess(res, course);
   }

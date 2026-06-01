@@ -1,0 +1,40 @@
+steps:
+  # Build Docker image với các biến môi trường Vite
+  - name: "gcr.io/cloud-builders/docker"
+    args:
+      - "build"
+      - "--build-arg"
+      - "VITE_API_BASE_URL=https://educloud-backend-871209214220.asia-southeast1.run.app/api"
+      - "--build-arg"
+      - "VITE_BUCKET_VIDEOS=educloud-videos-nhom9ca3"
+      - "--build-arg"
+      - "VITE_BUCKET_DOCS=educloud-docs-nhom9ca3"
+      - "--build-arg"
+      - "VITE_BUCKET_LOGS=educloud-logs-nhom9ca3"
+      - "-t"
+      - "asia-southeast1-docker.pkg.dev/$PROJECT_ID/cloud-run-source-deploy/educloud-frontend"
+      - "."
+
+  # Push image lên Artifact Registry
+  - name: "gcr.io/cloud-builders/docker"
+    args:
+      - "push"
+      - "asia-southeast1-docker.pkg.dev/$PROJECT_ID/cloud-run-source-deploy/educloud-frontend"
+
+  # Deploy lên Cloud Run
+  - name: "gcr.io/google.com/cloudsdktool/cloud-sdk"
+    entrypoint: gcloud
+    args:
+      - "run"
+      - "deploy"
+      - "educloud-frontend"
+      - "--image"
+      - "asia-southeast1-docker.pkg.dev/$PROJECT_ID/cloud-run-source-deploy/educloud-frontend"
+      - "--region"
+      - "asia-southeast1"
+      - "--port"
+      - "8080"
+      - "--allow-unauthenticated"
+
+images:
+  - "asia-southeast1-docker.pkg.dev/$PROJECT_ID/cloud-run-source-deploy/educloud-frontend"
