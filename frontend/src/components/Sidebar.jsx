@@ -14,6 +14,7 @@ const NAV_ITEMS = [
 
 const ZOHO_NAV_ITEMS = [
   { path: "/zoho", label: "Zoho Hub", icon: "🏠" },
+  { path: "/zoho/mail", label: "Email", icon: "📧", roles: ["Admin"] },
   { path: "/zoho/crm", label: "CRM & Tư vấn", icon: "👥", roles: ["Admin"] },
   { path: "/zoho/crm/leads", label: "Danh sách Lead", icon: "📋", roles: ["Admin"] },
   { path: "/zoho/desk", label: "Hỗ trợ", icon: "🎫" },

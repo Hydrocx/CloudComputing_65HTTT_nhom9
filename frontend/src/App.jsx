@@ -13,6 +13,7 @@ const PAGE_TITLES = {
   "/versioning": "Lịch sử phiên bản",
   // Zoho pages
   "/zoho": "Zoho Integration Hub",
+  "/zoho/mail": "Gửi Email — Zoho Mail",
   "/zoho/crm": "Đăng ký tư vấn — Zoho CRM",
   "/zoho/crm/leads": "Danh sách Lead — Zoho CRM",
   "/zoho/desk": "Hỗ trợ kỹ thuật — Zoho Desk",

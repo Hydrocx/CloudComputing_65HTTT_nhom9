@@ -10,6 +10,7 @@ import Versioning from "../pages/Versioning.jsx";
 
 // Zoho pages
 import ZohoHub from "../pages/ZohoHub.jsx";
+import ZohoMail from "../pages/ZohoMail.jsx";
 import ZohoCrmConsult from "../pages/ZohoCrmConsult.jsx";
 import ZohoCrmLeads from "../pages/ZohoCrmLeads.jsx";
 import ZohoDeskTickets from "../pages/ZohoDeskTickets.jsx";
@@ -73,6 +74,14 @@ const router = createHashRouter([
 
       // === Zoho Routes ===
       { path: "zoho", element: <ZohoHub /> },
+      {
+        path: "zoho/mail",
+        element: (
+          <ProtectedRoute allow={["Admin"]}>
+            <ZohoMail />
+          </ProtectedRoute>
+        ),
+      },
       { path: "zoho/crm", element: <ZohoCrmConsult /> },
       {
         path: "zoho/crm/leads",
