@@ -25,6 +25,7 @@ router.post("/tickets", auth, async (req, res) => {
       subject,
       description,
       email: req.user.email,
+      name: req.user.name || req.user.email.split('@')[0],
       category,
     });
     return sendSuccess(res, result);

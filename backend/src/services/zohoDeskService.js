@@ -5,18 +5,20 @@
 
 import zohoConfig from "../config/zoho.js";
 import { zohoFetch } from "./zohoAuth.js";
-
 /**
  * Create a new support ticket.
  */
-export const createTicket = async ({ subject, description, email, category }) => {
+export const createTicket = async ({ subject, description, email, name, category }) => {
   const url = `${zohoConfig.desk.apiBase}/tickets`;
 
   const payload = {
     subject,
     description,
-    email,
     departmentId: zohoConfig.desk.departmentId,
+    contact: {
+      lastName: name || email.split("@")[0],
+      email: email
+    },
     category: category || "General",
     priority: "Medium",
     channel: "Web",

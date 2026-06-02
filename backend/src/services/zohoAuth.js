@@ -68,13 +68,18 @@ export const getAccessToken = async () => {
 export const zohoFetch = async (url, options = {}) => {
   const token = await getAccessToken();
 
+  const fetchHeaders = {
+    Authorization: `Zoho-oauthtoken ${token}`,
+    ...options.headers,
+  };
+
+  if (typeof options.body === "string" && !fetchHeaders["Content-Type"]) {
+    fetchHeaders["Content-Type"] = "application/json";
+  }
+
   const response = await fetch(url, {
     ...options,
-    headers: {
-      Authorization: `Zoho-oauthtoken ${token}`,
-      "Content-Type": "application/json",
-      ...options.headers,
-    },
+    headers: fetchHeaders,
   });
 
   if (!response.ok) {

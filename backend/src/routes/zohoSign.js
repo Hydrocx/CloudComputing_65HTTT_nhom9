@@ -54,10 +54,11 @@ router.get("/request/:id/download", auth, async (req, res) => {
   try {
     const pdfResponse = await downloadSignedDocument(req.params.id);
 
-    if (pdfResponse?.body) {
+    if (pdfResponse && pdfResponse.arrayBuffer) {
+      const buffer = Buffer.from(await pdfResponse.arrayBuffer());
       res.setHeader("Content-Type", "application/pdf");
       res.setHeader("Content-Disposition", `attachment; filename="signed-${req.params.id}.pdf"`);
-      pdfResponse.body.pipe(res);
+      res.send(buffer);
     } else {
       return sendSuccess(res, { message: "Tài liệu chưa sẵn sàng." });
     }
