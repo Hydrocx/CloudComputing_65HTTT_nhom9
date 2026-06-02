@@ -3,6 +3,9 @@ import { body, validationResult } from "express-validator";
 import { auth } from "../middleware/auth.js";
 import { requireRole } from "../middleware/roleCheck.js";
 import { addUser, getUsers, updateUser } from "../data/store.js";
+import { sendActivationEmail } from "../services/zohoMailService.js";
+import { createLead } from "../services/zohoCrmService.js";
+import { sendNotification } from "../services/zohoCliqService.js";
 
 const router = express.Router();
 
@@ -35,6 +38,26 @@ router.post(
   (req, res) => {
     const { email, name, role, courseIds = [], enrolledCourseIds = [] } = req.body;
     const user = addUser({ email, name, role, courseIds, enrolledCourseIds });
+
+    // Send activation email via Zoho Mail (non-blocking)
+    sendActivationEmail(user).catch((err) =>
+      console.warn("[Zoho Mail] Activation email failed:", err.message)
+    );
+
+    // If new user is a Student, create a Lead in Zoho CRM (non-blocking)
+    if (role === "Student") {
+      createLead({ name, email, phone: "", courseInterest: "Mới đăng ký" }).catch((err) =>
+        console.warn("[Zoho CRM] Lead creation failed:", err.message)
+      );
+    }
+
+    // Notify admin team via Zoho Cliq (non-blocking)
+    sendNotification({
+      message: `👤 Người dùng mới: *${name}* (${email}) — Vai trò: ${role}`,
+    }).catch((err) =>
+      console.warn("[Zoho Cliq] New user notification failed:", err.message)
+    );
+
     return sendSuccess(res, user);
   }
 );

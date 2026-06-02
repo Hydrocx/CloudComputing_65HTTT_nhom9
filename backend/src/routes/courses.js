@@ -1,6 +1,7 @@
 import express from "express";
 import { body, param, validationResult } from "express-validator";
 import { sendEnrollmentConfirmation } from "../services/zohoMailService.js";
+import { notifyNewCourse } from "../services/zohoCliqService.js";
 import { auth } from "../middleware/auth.js";
 import { requireRole } from "../middleware/roleCheck.js";
 import {
@@ -120,6 +121,11 @@ router.post(
     updateUser(teacher.id, {
       courseIds: Array.from(new Set([...(teacher.courseIds || []), course.id])),
     });
+
+    // Notify admin team via Zoho Cliq (non-blocking)
+    notifyNewCourse(course).catch((err) =>
+      console.warn("[Zoho Cliq] New course notification failed:", err.message)
+    );
 
     return sendSuccess(res, course);
   }

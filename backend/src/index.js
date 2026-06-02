@@ -17,6 +17,7 @@ import zohoAnalyticsRouter from "./routes/zohoAnalytics.js";
 import zohoSubscriptionRouter from "./routes/zohoSubscription.js";
 import zohoCliqRouter from "./routes/zohoCliq.js";
 import zohoCreatorRouter from "./routes/zohoCreator.js";
+import zohoPaymentWebhookRouter from "./routes/zohoPaymentWebhook.js";
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -60,6 +61,7 @@ app.use("/api/zoho/analytics", zohoAnalyticsRouter);
 app.use("/api/zoho/subscription", zohoSubscriptionRouter);
 app.use("/api/zoho/cliq", zohoCliqRouter);
 app.use("/api/zoho/creator", zohoCreatorRouter);
+app.use("/api/zoho/payment", zohoPaymentWebhookRouter);
 
 app.use((req, res) => {
   res.status(404).json({ success: false, error: "Khong tim thay duong dan." });

@@ -188,6 +188,44 @@ const Dashboard = () => {
           </div>
         </div>
       </section>
+
+      {/* Zoho Integration Quick Access */}
+      <section className="rounded-2xl border border-white/10 bg-slate-900/60 p-4">
+        <div className="flex items-center justify-between">
+          <h3 className="text-sm font-semibold text-slate-200">⚡ Zoho Integration</h3>
+          <a
+            href="#/zoho"
+            className="text-xs text-sky-400 transition hover:text-sky-300"
+          >
+            Xem tất cả →
+          </a>
+        </div>
+        <div className="mt-4 grid grid-cols-2 gap-2 sm:grid-cols-5">
+          {[
+            { icon: "📧", label: "Mail", path: "#/zoho/mail", roles: ["Admin"] },
+            { icon: "👥", label: "CRM", path: "#/zoho/crm", roles: ["Admin"] },
+            { icon: "🎫", label: "Hỗ trợ", path: "#/zoho/desk" },
+            { icon: "📄", label: "Hóa đơn", path: "#/zoho/invoice" },
+            { icon: "✍️", label: "Ký số", path: "#/zoho/sign", roles: ["Admin", "Teacher"] },
+            { icon: "📹", label: "Live", path: "#/zoho/meeting" },
+            { icon: "📊", label: "Analytics", path: "#/zoho/analytics", roles: ["Admin"] },
+            { icon: "💳", label: "Gói", path: "#/zoho/subscription" },
+            { icon: "💬", label: "Cliq", path: "#/zoho/cliq", roles: ["Admin"] },
+            { icon: "🔧", label: "Creator", path: "#/zoho/creator", roles: ["Admin"] },
+          ]
+            .filter((s) => !s.roles || s.roles.includes(role))
+            .map((s) => (
+              <a
+                key={s.label}
+                href={s.path}
+                className="flex items-center gap-2 rounded-xl border border-white/5 bg-slate-950/30 px-3 py-2 text-xs text-slate-300 transition hover:border-white/20 hover:bg-white/5"
+              >
+                <span>{s.icon}</span>
+                <span>{s.label}</span>
+              </a>
+            ))}
+        </div>
+      </section>
     </div>
   );
 };
