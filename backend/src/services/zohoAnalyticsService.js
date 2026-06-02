@@ -10,11 +10,25 @@ import { zohoFetch } from "./zohoAuth.js";
  * Push data rows to a Zoho Analytics table.
  */
 export const pushData = async (tableName, rows) => {
-  const url = `${zohoConfig.analytics.apiBase}/workspaces/${zohoConfig.analytics.workspaceId}/${tableName}?CONFIG={"importType":"APPEND"}`;
+  const config = encodeURIComponent(
+    JSON.stringify({
+      importType: "APPEND",
+      fileType: "json",
+      autoIdentify: true,
+      ZOHO_CREATE_TABLE: true,
+      tableName: tableName
+    })
+  );
+  
+  const url = `${zohoConfig.analytics.apiBase}/workspaces/${zohoConfig.analytics.workspaceId}/data?CONFIG=${config}`;
 
   return zohoFetch(url, {
     method: "POST",
-    body: JSON.stringify(rows),
+    headers: {
+      "ZANALYTICS-ORGID": zohoConfig.analytics.orgId,
+      "Content-Type": "application/x-www-form-urlencoded"
+    },
+    body: `FILE=null&JSONString=${encodeURIComponent(JSON.stringify({ data: rows }))}`
   });
 };
 
@@ -24,7 +38,11 @@ export const pushData = async (tableName, rows) => {
 export const getEmbedUrl = async (viewId) => {
   const url = `${zohoConfig.analytics.apiBase}/workspaces/${zohoConfig.analytics.workspaceId}/views/${viewId}/publish/embed`;
 
-  return zohoFetch(url);
+  return zohoFetch(url, {
+    headers: {
+      "ZANALYTICS-ORGID": zohoConfig.analytics.orgId
+    }
+  });
 };
 
 /**
@@ -33,7 +51,11 @@ export const getEmbedUrl = async (viewId) => {
 export const getViews = async () => {
   const url = `${zohoConfig.analytics.apiBase}/workspaces/${zohoConfig.analytics.workspaceId}/views`;
 
-  return zohoFetch(url);
+  return zohoFetch(url, {
+    headers: {
+      "ZANALYTICS-ORGID": zohoConfig.analytics.orgId
+    }
+  });
 };
 
 /**

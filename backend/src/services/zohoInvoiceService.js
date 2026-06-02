@@ -7,10 +7,44 @@ import zohoConfig from "../config/zoho.js";
 import { zohoFetch } from "./zohoAuth.js";
 
 /**
+ * Get or create a customer in Zoho Invoice by email.
+ */
+const getOrCreateCustomer = async (email, name) => {
+  try {
+    const searchUrl = `${zohoConfig.invoice.apiBase}/contacts?organization_id=${zohoConfig.invoice.orgId}&email_contains=${encodeURIComponent(email)}`;
+    const searchRes = await zohoFetch(searchUrl);
+
+    if (searchRes && searchRes.contacts && searchRes.contacts.length > 0) {
+      return searchRes.contacts[0].contact_id;
+    }
+
+    const createUrl = `${zohoConfig.invoice.apiBase}/contacts?organization_id=${zohoConfig.invoice.orgId}`;
+    const createRes = await zohoFetch(createUrl, {
+      method: "POST",
+      body: JSON.stringify({
+        contact_name: name || email.split("@")[0],
+        contact_persons: [{
+          first_name: name || email.split("@")[0],
+          email: email
+        }]
+      })
+    });
+
+    return createRes.contact.contact_id;
+  } catch (err) {
+    console.warn("Lỗi lấy/tạo customer trong Invoice:", err.message);
+    return null;
+  }
+};
+
+/**
  * Create a new invoice.
  */
 export const createInvoice = async ({ customerEmail, customerName, items, tax }) => {
   const url = `${zohoConfig.invoice.apiBase}/invoices?organization_id=${zohoConfig.invoice.orgId}`;
+  
+  const customerId = await getOrCreateCustomer(customerEmail, customerName);
+
 
   const lineItems = items.map((item) => ({
     name: item.name,
@@ -20,6 +54,7 @@ export const createInvoice = async ({ customerEmail, customerName, items, tax })
   }));
 
   const payload = {
+    customer_id: customerId,
     customer_name: customerName,
     customer_email: customerEmail,
     line_items: lineItems,

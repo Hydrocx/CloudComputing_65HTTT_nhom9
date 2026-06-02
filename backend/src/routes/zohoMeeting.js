@@ -25,7 +25,6 @@ router.post("/create", auth, requireRole("Admin", "Teacher"), async (req, res) =
       topic,
       startTime,
       duration,
-      presenter: req.user.email,
     });
     return sendSuccess(res, result);
   } catch (error) {

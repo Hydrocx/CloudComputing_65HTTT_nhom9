@@ -28,7 +28,8 @@ const zohoConfig = {
   crm: {
     orgId: process.env.ZOHO_CRM_ORG_ID || "",
     get apiBase() {
-      return `https://www.zohoapis.${zohoConfig.oauth.domain}/crm/v2`;
+      const apiDomain = zohoConfig.oauth.domain.replace("zoho", "zohoapis");
+      return `https://www.${apiDomain}/crm/v2`;
     },
   },
 
@@ -71,7 +72,7 @@ const zohoConfig = {
     orgId: process.env.ZOHO_ANALYTICS_ORG_ID || "",
     workspaceId: process.env.ZOHO_ANALYTICS_WORKSPACE_ID || "",
     get apiBase() {
-      return `https://analyticsapi.${zohoConfig.oauth.domain}/api/${this.orgId}`;
+      return `https://analyticsapi.${zohoConfig.oauth.domain}/restapi/v2`;
     },
   },
 

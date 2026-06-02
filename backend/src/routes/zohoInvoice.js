@@ -51,10 +51,11 @@ router.get("/:id/pdf", auth, async (req, res) => {
   try {
     const pdfResponse = await getInvoicePdf(req.params.id);
 
-    if (pdfResponse?.body) {
+    if (pdfResponse && pdfResponse.arrayBuffer) {
+      const buffer = Buffer.from(await pdfResponse.arrayBuffer());
       res.setHeader("Content-Type", "application/pdf");
       res.setHeader("Content-Disposition", `attachment; filename="invoice-${req.params.id}.pdf"`);
-      pdfResponse.body.pipe(res);
+      res.send(buffer);
     } else {
       return sendSuccess(res, { message: "PDF URL sẽ được gửi qua email." });
     }
